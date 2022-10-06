@@ -10,6 +10,27 @@ pub struct Post {
     pub published: bool,
 }
 
+#[derive(Debug, Serialize)]
+pub struct PostView {
+    pub id: i32,
+    pub title: String,
+    pub body: String,
+    pub published: bool,
+    pub link: String,
+}
+
+impl From<Post> for PostView {
+    fn from(post: Post) -> Self {
+        PostView {
+            id: post.id,
+            title: post.title,
+            body: post.body,
+            published: post.published,
+            link: format!("/blog/{}", post.id),
+        }
+    }
+}
+
 //#[derive(Insertable, Deserialize)]
 //#[diesel(table_name = posts)]
 //pub struct NewPost<'a> {
