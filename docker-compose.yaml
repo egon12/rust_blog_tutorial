@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+        # - POSTGRES_USER=unicorn_user
+        # - POSTGRES_PASSWORD=magical_password
+        # - POSTGRES_DB=tokopedia-digital-retention
+        #- POSTGRES_DB=us
+        #- POSTGRES_PASSWORD=pw
+        #- POSTGRES_USER=us
+
